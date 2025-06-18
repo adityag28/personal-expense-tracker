@@ -6,13 +6,13 @@ import RecentTransactionCards from '../components/cards/RecentTransactionCards'
 
 const Dashboard = () => {
     return (
-        <div className='px-4 '>
+        <div className='p-1 '>
             <div>
-                <h1 className='font-bold text-blue-600 text-2xl '>Good Morning, John!</h1>
-                <p className='text-lg text-gray-500'>Here's your expense overview</p>
+                <h1 className='font-semibold text-blue-600 text-xl '>Good Morning, John!</h1>
+                <p className='text-md text-gray-500'>Here's your expense overview</p>
                 <ExpenseCard />
             </div>
-            <div className='flex'>
+            <div className='flex gap-10'>
                 <ExpenseBreakdown />
                 <RecentTransactionCards />
             </div>

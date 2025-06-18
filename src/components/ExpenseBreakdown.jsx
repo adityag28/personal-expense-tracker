@@ -16,9 +16,9 @@ const ExpenseBreakdown = () => {
     const [endDate, setEndDate] = useState(null);
 
     return (
-        <div className="p-4 sm:p-6 w-full max-w-3xl mx-auto rounded-xl shadow-md bg-white">
+        <div className="px-4 py-2  w-120  mx-auto rounded-xl shadow-md bg-white">
             {/* Header with date pickers */}
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-4">
+            <div className="flex justify-between  gap-4 mb-4">
                 <h2 className="text-lg font-semibold text-gray-800">Expense Breakdown</h2>
                 <div className="flex flex-col sm:flex-row gap-2">
                     <DatePicker
@@ -28,7 +28,7 @@ const ExpenseBreakdown = () => {
                         startDate={startDate}
                         endDate={endDate}
                         placeholderText="Start Date"
-                        className="text-sm border px-3 py-1 rounded w-full sm:w-36"
+                        className="text-sm border px-2 py-1 rounded  w-25"
                     />
                     <DatePicker
                         selected={endDate}
@@ -38,14 +38,14 @@ const ExpenseBreakdown = () => {
                         endDate={endDate}
                         minDate={startDate}
                         placeholderText="End Date"
-                        className="text-sm border px-3 py-1 rounded w-full sm:w-36"
+                        className="text-sm border px-2 py-1 rounded w-25"
                     />
                 </div>
             </div>
 
             {/* Pie Chart */}
             <div className="flex flex-col items-center">
-                <PieChart width={220} height={180}>
+                <PieChart width={180} height={180}>
                     <Pie
                         data={data}
                         dataKey="value"
@@ -61,12 +61,11 @@ const ExpenseBreakdown = () => {
                     </Pie>
                 </PieChart>
 
-                {/* Legend */}
-                <div className="w-full mt-4 space-y-2">
+                <div className="w-full  space-y-2">
                     {data.map((item, index) => (
                         <div
                             key={index}
-                            className="flex justify-between items-center border-b pb-1 text-sm sm:text-base"
+                            className="flex justify-between items-center  text-sm sm:text-base"
                         >
                             <div className="flex items-center gap-2">
                                 <div

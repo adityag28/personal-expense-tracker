@@ -62,7 +62,7 @@ const RecentTransactionCards = () => {
     ];
 
     return (
-        <div className="p-4 sm:p-6 w-full max-w-3xl mx-auto rounded-xl shadow-md bg-white">
+        <div className="px-4 pt-2  w-120 h-98 mx-auto rounded-xl shadow-md bg-white">
             <div className="flex flex-col gap-4">
                 {/* Header */}
                 <div className="flex justify-between items-center">
@@ -71,7 +71,7 @@ const RecentTransactionCards = () => {
                 </div>
 
                 {/* Scrollable List */}
-                <div className="flex flex-col gap-4 max-h-80 overflow-y-auto pr-2">
+                <div className="flex flex-col gap-4 max-h-75 overflow-y-auto pr-2">
                     {transactionData.map((transaction, index) => (
                         <div
                             key={index}

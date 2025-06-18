@@ -3,17 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 const navSlice = createSlice({
     name: "nav",
     initialState: {
-        isMenuOpen: true
+        isNavOpen: true
     },
     reducers: {
-        toggleMenu: (state) => {
-            state.isMenuOpen = !state.isMenuOpen
+        toggleNav: (state) => {
+            state.isNavOpen = !state.isNavOpen
         },
-        removeMenu: (state) => {
-            state.isMenuOpen = false;
+        removeNav: (state) => {
+            state.isNavOpen = false;
         },
     }
 })
 
-export const { toggleMenu, removeMenu } = navSlice.actions
+export const { toggleNav, removeNav } = navSlice.actions
 export default navSlice.reducer
