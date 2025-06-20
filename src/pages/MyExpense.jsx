@@ -26,10 +26,10 @@ const MyExpense = () => {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div className="flex flex-col">
                     <h1 className="font-bold text-blue-600 text-lg sm:text-md">
-                        Good Morning, John!
+                        Your Expense
                     </h1>
                     <p className="text-base sm:text-lg lg:text-md text-gray-600">
-                        Here's your expense overview
+                        Check your expenses
                     </p>
                 </div>
                 <button
@@ -144,7 +144,7 @@ const MyExpense = () => {
                                     {expense.category === 'Health' && <span className="text-red-600">🏥</span>}
                                 </div>
                                 <div>
-                                    <h1 className="font-bold text-blue-600 text-base sm:text-lg">
+                                    <h1 className=" text-blue-600 text-base sm:text-lg">
                                         {expense.title}
                                     </h1>
                                     <p className="text-sm text-gray-500">
