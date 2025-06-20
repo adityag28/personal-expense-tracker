@@ -29,7 +29,7 @@ const Insights = () => {
                 </div>
 
                 {/* Comparison Cards */}
-                <div className="flex flex-col items-center sm:flex-col lg:flex-row lg:justify-between gap-4">
+                <div className="flex flex-col items-center sm:flex-col lg:flex-row lg:justify-between mt-2 gap-4">
                     <div className="shadow-lg p-4 text-center rounded-lg bg-white w-full lg:w-[48%]">
                         <p className="text-xs text-gray-500">This Month</p>
                         <p className="text-lg font-bold text-gray-700">₹12,450</p>
