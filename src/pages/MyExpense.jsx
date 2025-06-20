@@ -174,7 +174,7 @@ const MyExpense = () => {
 
             {/* Add Expense Modal */}
             {showAddForm && (
-                <div className="fixed inset-0 bg-black/80 bg-opacity-50 flex items-center justify-center p-4 z-50">
+                <div className="fixed inset-0 bg-black/70 bg-opacity-50 flex items-center justify-center p-4 z-50">
                     <div className="bg-white rounded-lg p-6 w-full max-w-md">
                         <h2 className="text-xl font-bold mb-4">Add New Expense</h2>
 
