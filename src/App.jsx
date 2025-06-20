@@ -1,10 +1,9 @@
 import { createRoot } from 'react-dom/client';
 import './App.css';
-import LoginForm from './components/LoginForm';
+import LoginForm from './components/forms/LoginForm';
 import Home from './pages/Home';
 import { StrictMode } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
 import appStore from './store/appStore';
 import { Provider } from 'react-redux';
@@ -14,12 +13,12 @@ import Insights from './pages/Insights';
 import Setup from './pages/Setup';
 import AccountSettings from './pages/AccountSettings';
 import Notification from './pages/Notification'; // ✅ missing import
+import CustomerNavbar from './components/navbars/CustomerNavbar';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={appStore}>
       <Router>
-        <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<LoginForm />} />

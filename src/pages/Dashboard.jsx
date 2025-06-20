@@ -1,20 +1,22 @@
-import React from 'react'
-import ExpenseBreakdown from '../components/ExpenseBreakdown'
-import DashboardRecentTransactions from '../components/cards/RecentTransactionCards'
-import ExpenseCard from '../components/cards/ExpenseCard'
-import RecentTransactionCards from '../components/cards/RecentTransactionCards'
+import DashboardRecentTransactions from '../components/dashboard/DashboardRecentTransactionCards'
+import DashboardExpenseCard from '../components/dashboard/DashboardExpenseCard'
+import DashboardExpenseBreakdown from '../components/dashboard/DashboardExpenseBreakdown'
 
 const Dashboard = () => {
     return (
-        <div className='p-1 '>
-            <div>
-                <h1 className='font-semibold text-blue-600 text-xl '>Good Morning, John!</h1>
-                <p className='text-md text-gray-500'>Here's your expense overview</p>
-                <ExpenseCard />
+        <div className="flex flex-col lg:flex-row px-4 gap-10">
+            <div className='flex flex-col'>
+                <h1 className="font-bold text-blue-600 text-lg sm:text-md ">
+                    Good Morning, John!
+                </h1>
+                <p className="text-base sm:text-lg lg:text-md text-gray-600 ">
+                    Here's your expense overview
+                </p>
+                <DashboardExpenseCard />
+                <DashboardExpenseBreakdown />
             </div>
-            <div className='flex gap-10'>
-                <ExpenseBreakdown />
-                <RecentTransactionCards />
+            <div>
+                <DashboardRecentTransactions />
             </div>
         </div>
     )

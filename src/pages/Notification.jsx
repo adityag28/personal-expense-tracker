@@ -1,11 +1,75 @@
-import React from 'react'
+import { useState } from "react";
 
 const Notification = () => {
-    return (
-        <div>
-            <h1>Notification</h1>
-        </div>
-    )
-}
+    const [isOpen, setIsOpen] = useState(false);
 
-export default Notification
+    const handleToggle = () => {
+        setIsOpen((prev) => !prev);
+    };
+
+    const notifications = [
+        { user: "Jese Leos", message: "Hey, what's up? All set for the presentation?", color: "bg-blue-600" },
+        { user: "Joseph Mcfall", message: "and 5 others started following you.", color: "bg-gray-900" },
+        { user: "Bonnie Green", message: "and 141 others love your story.", color: "bg-red-600" },
+        { user: "Leslie Livingston", message: "mentioned you in a comment: @bonnie.green", color: "bg-green-400" },
+        { user: "Robert Brown", message: "posted a new video: Glassmorphism", color: "bg-purple-500" }
+    ];
+
+    return (
+        <div className="relative">
+            <button
+                onClick={handleToggle}
+                className="relative inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400"
+            >
+                <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 20">
+                    <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57V1.1a1 1 0 0 0-2 0v2.47a5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z" />
+                </svg>
+                <div className="absolute w-3 h-3 bg-red-500 border-2 border-white rounded-full -top-0.5 start-2.5 dark:border-gray-900"></div>
+            </button>
+
+            {isOpen && (
+                <div className="absolute right-0 mt-2 z-20 w-96 bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-800 dark:divide-gray-700">
+                    <div className="px-4 py-2 font-medium text-center text-gray-700 bg-gray-50 rounded-t-lg dark:bg-gray-800 dark:text-white">
+                        Notifications
+                    </div>
+
+                    <div className="divide-y divide-gray-100 dark:divide-gray-700 max-h-96 overflow-y-auto">
+                        {notifications.map((item, index) => (
+                            <div key={index} className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <div className="relative shrink-0">
+                                    <img
+                                        className="rounded-full w-11 h-11"
+                                        src={`/docs/images/people/profile-picture-${index + 1}.jpg`}
+                                        alt={item.user}
+                                    />
+                                    <div className={`absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 ${item.color} border border-white rounded-full dark:border-gray-800`}>
+                                        <svg className="w-2 h-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                                            <path d="M1 18h16a1 1 0 0 0 1-1v-6h-4.439a.99.99 0 0 0-.908.6 3.978 3.978 0 0 1-7.306 0 .99.99 0 0 0-.908-.6H0v6a1 1 0 0 0 1 1Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div className="w-full ps-3">
+                                    <div className="text-gray-500 text-sm mb-1.5 dark:text-gray-400">
+                                        <span className="font-semibold text-gray-900 dark:text-white">{item.user}</span> {item.message}
+                                    </div>
+                                    <div className="text-xs text-blue-600 dark:text-blue-500">Just now</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <button className="block w-full py-2 text-sm font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white rounded-b-lg">
+                        <div className="inline-flex items-center justify-center">
+                            <svg className="w-4 h-4 me-2 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
+                                <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+                            </svg>
+                            View all
+                        </div>
+                    </button>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default Notification;

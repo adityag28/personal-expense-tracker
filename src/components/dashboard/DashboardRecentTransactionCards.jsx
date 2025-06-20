@@ -24,45 +24,10 @@ const RecentTransactionCards = () => {
             paymentMethod: "Credit Card",
             amount: "₹450"
         },
-        {
-            transactionNote: "Swiggy",
-            category: "Food",
-            date: "15-06-2025",
-            paymentMethod: "UPI",
-            amount: "₹400"
-        },
-        {
-            transactionNote: "Petrol",
-            category: "Petrol",
-            date: "12-03-2025",
-            paymentMethod: "Credit Card",
-            amount: "₹450"
-        },
-        {
-            transactionNote: "Swiggy",
-            category: "Food",
-            date: "15-06-2025",
-            paymentMethod: "UPI",
-            amount: "₹400"
-        },
-        {
-            transactionNote: "Petrol",
-            category: "Petrol",
-            date: "12-03-2025",
-            paymentMethod: "Credit Card",
-            amount: "₹450"
-        },
-        {
-            transactionNote: "Swiggy",
-            category: "Food",
-            date: "15-06-2025",
-            paymentMethod: "UPI",
-            amount: "₹400"
-        },
     ];
 
     return (
-        <div className="px-4 pt-2  w-120 h-98 mx-auto rounded-xl shadow-md bg-white">
+        <div className="p-4 w-full lg:w-[420px] mx-auto mt-12 rounded-xl shadow-md bg-white">
             <div className="flex flex-col gap-4">
                 {/* Header */}
                 <div className="flex justify-between items-center">
@@ -75,19 +40,24 @@ const RecentTransactionCards = () => {
                     {transactionData.map((transaction, index) => (
                         <div
                             key={index}
-                            className="flex justify-between items-center border-b pb-2"
+                            className="grid grid-cols-3 items-center  "
                         >
                             <div className="space-y-1">
-                                <h1 className="font-bold text-blue-600 text-base sm:text-lg">{transaction.transactionNote}</h1>
+                                <h1 className=" text-blue-600 text-base sm:text-lg">{transaction.transactionNote}</h1>
                                 <p className="text-sm text-gray-500">
                                     {transaction.category} | {transaction.paymentMethod}
                                 </p>
-                                <p className="text-xs text-gray-400">{transaction.date}</p>
                             </div>
-                            <div>
-                                <p className="text-sm sm:text-base text-gray-600 font-semibold">{transaction.amount}</p>
+
+                            <div className="text-center">
+                                <p className="text-xs text-gray-600">{transaction.date}</p>
+                            </div>
+
+                            <div className="text-right">
+                                <p className="text-sm sm:text-base text-gray-600 ">{transaction.amount}</p>
                             </div>
                         </div>
+
                     ))}
                 </div>
             </div>

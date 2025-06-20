@@ -1,21 +1,19 @@
-import { Outlet } from "react-router-dom"
-import Sidebar from "../components/Sidebar"
-import Dashboard from "./Dashboard"
-import Header from "../components/Header"
-
+import { Outlet } from "react-router-dom";
+import CustomerNavbar from "../components/navbars/CustomerNavbar";
+import Sidebar from "../components/navbars/Sidebar";
 
 const Body = () => {
     return (
-        <div className="flex ">
-            <aside >
-                <Header />
+        <div className="min-h-screen flex flex-col">
+            <CustomerNavbar />
+            <div className="flex flex-col sm:flex-row flex-1">
                 <Sidebar />
-            </aside>
-            <main>
-                <Outlet />
-            </main>
+                <main className="flex-1 bg-white p-2 sm:p-4">
+                    <Outlet />
+                </main>
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Body
+export default Body;
