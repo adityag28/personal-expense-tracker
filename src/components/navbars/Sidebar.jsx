@@ -6,6 +6,7 @@ import { TbReportMoney } from "react-icons/tb";
 import { CgInsights } from "react-icons/cg";
 import { MdDisplaySettings } from "react-icons/md";
 import { PiSignOutBold } from "react-icons/pi";
+import { IoNotifications } from 'react-icons/io5';
 
 const Sidebar = () => {
     const dispatch = useDispatch();
@@ -39,6 +40,12 @@ const Sidebar = () => {
                     <Link to='insights' onClick={handleLinkClick} className='flex items-center  px-4 pt-5 gap-2'>
                         <CgInsights className="w-5 h-5" />
                         Insights
+                    </Link>
+                </li>
+                <li>
+                    <Link to='notification' onClick={handleLinkClick} className='flex items-center  px-4 pt-5 gap-2'>
+                        <IoNotifications className="w-5 h-5" />
+                        Notification
                     </Link>
                 </li>
                 <li>

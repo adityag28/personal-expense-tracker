@@ -6,6 +6,7 @@ const MyExpense = () => {
     const {
         selectedCategory,
         setSelectedCategory,
+        categories,
         selectedDate,
         setSelectedDate,
         showAddForm,
@@ -13,7 +14,6 @@ const MyExpense = () => {
         newExpense,
         setNewExpense,
         chartData,
-        categories,
         paymentMethods,
         handleAddExpense,
         handleDeleteExpense,
