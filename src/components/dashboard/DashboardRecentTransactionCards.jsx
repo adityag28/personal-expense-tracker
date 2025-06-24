@@ -27,7 +27,7 @@ const RecentTransactionCards = () => {
     ];
 
     return (
-        <div className="p-4 w-full lg:w-[420px] mx-auto mt-12 rounded-xl shadow-md bg-white">
+        <div className="p-4 w-full lg:w-[420px] mx-auto  rounded-xl shadow-md bg-white">
             <div className="flex flex-col gap-4">
                 {/* Header */}
                 <div className="flex justify-between items-center">

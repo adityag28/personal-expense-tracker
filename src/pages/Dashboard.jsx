@@ -1,10 +1,11 @@
 import DashboardRecentTransactions from '../components/dashboard/DashboardRecentTransactionCards'
 import DashboardExpenseCard from '../components/dashboard/DashboardExpenseCard'
 import DashboardExpenseBreakdown from '../components/dashboard/DashboardExpenseBreakdown'
+import Expense_Bg from '../assets/bg.jpg';
 
 const Dashboard = () => {
     return (
-        <div className="flex flex-col lg:flex-row px-4 gap-10">
+        <div className="flex flex-col lg:flex-row px-4 gap-10" >
             <div className='flex flex-col'>
                 <h1 className="font-bold text-blue-600 text-lg sm:text-md ">
                     Good Morning, John!

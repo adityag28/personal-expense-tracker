@@ -92,7 +92,7 @@ const Insights = () => {
             </div>
 
             {/* Right Side Panel */}
-            <div className="w-full lg:w-[35%] mt-4 lg:mt-12">
+            <div className="w-full lg:w-[35%] sm:mt-4 lg:mt-12">
                 <div className="bg-white rounded-xl shadow-sm p-4 mb-4">
                     <h2 className="font-semibold text-gray-700 text-base mb-4 flex items-center gap-2">🎯 Spending Habits</h2>
                     {[

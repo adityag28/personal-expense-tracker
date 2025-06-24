@@ -23,22 +23,29 @@ const MyExpense = () => {
     return (
         <div className="flex flex-col px-4">
             {/* Header */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className="flex  justify-between  w-full gap-4">
+                {/* Left: Title & Subtitle */}
                 <div className="flex flex-col">
-                    <h1 className="font-bold text-blue-600 text-lg sm:text-md">
+                    <h1 className="font-bold text-blue-600 text-lg sm:text-xl lg:text-2xl">
                         Your Expense
                     </h1>
-                    <p className="text-base sm:text-lg lg:text-md text-gray-600">
+                    <p className="text-sm sm:text-base lg:text-lg text-gray-600">
                         Check your expenses
                     </p>
                 </div>
-                <button
-                    onClick={() => setShowAddForm(true)}
-                    className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
-                >
-                    + Add Expense
-                </button>
+
+                {/* Right: Button */}
+                <div>
+                    <button
+                        onClick={() => setShowAddForm(true)}
+                        className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
+                    >
+                        + Add Expense
+                    </button>
+                </div>
             </div>
+
+
 
             {/* Chart Section */}
             <div className="bg-white rounded-lg p-4 shadow-sm my-10 w-full">

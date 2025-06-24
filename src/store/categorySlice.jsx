@@ -1,32 +1,43 @@
 // store/categorySlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  categories: [
+    { id: 1, name: 'Food', icon: '🍔' },
+    { id: 2, name: 'Transport', icon: '🚗' },
+    { id: 3, name: 'Groceries', icon: '🛒' },
+    { id: 4, name: 'Utilities', icon: '💡' },
+    { id: 5, name: 'Health', icon: '💊' },
+    { id: 6, name: 'Entertainment', icon: '🎬' },
+    { id: 7, name: 'Shopping', icon: '🛍️' },
+    { id: 8, name: 'Recharge & Bills', icon: '📱' },
+  ]
+};
+
 const categorySlice = createSlice({
   name: 'category',
-  initialState: {
-    list: []
-  },
+  initialState,
   reducers: {
     setCategories: (state, action) => {
-      state.list = action.payload;
+      state.categories = action.payload;
     },
     addCategory: (state, action) => {
-      state.list.push(action.payload);
+      state.categories.push(action.payload);
     },
     updateCategory: (state, action) => {
-      const index = state.list.findIndex(cat => cat.id === action.payload.id);
-      if (index !== -1) state.list[index] = action.payload;
+      const index = state.categories.findIndex(cat => cat.id === action.payload.id);
+      if (index !== -1) {
+        state.categories[index] = action.payload;
+      }
     },
     deleteCategory: (state, action) => {
-      state.list = state.list.filter(cat => cat.id !== action.payload);
+      state.categories = state.categories.filter(cat => cat.id !== action.payload);
     }
   }
 });
 
-// ✅ Export actions
 export const { setCategories, addCategory, updateCategory, deleteCategory } = categorySlice.actions;
 
-// ✅ Selector for useSelector
-export const selectCategories = (state) => state.category.list;
+export const selectCategories = (state) => state.category.categories;
 
 export default categorySlice.reducer;
